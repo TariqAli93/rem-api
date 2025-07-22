@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /path/to/your/app || exit
+cd ./ || exit
 
 echo "🌀 Pulling latest code..."
 git pull origin main

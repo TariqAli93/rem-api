@@ -16,8 +16,6 @@ const ConfigSchema = object({
     JWT_SECRET: string(),
     JWT_ACCESS_TOKEN_EXPIRES_IN: string(),
     JWT_REFRESH_TOKEN_EXPIRES_IN: string(),
-    OTP_EXPIRY: number().nullable().default(300).optional(),
-    AES_ENCRYPTION_KEY: string().nullable().length(64).optional(),
 });
 
 const envVariables = {
@@ -29,10 +27,6 @@ const envVariables = {
     JWT_SECRET: process.env.JWT_SECRET || "your_jwt_secret",
     JWT_ACCESS_TOKEN_EXPIRES_IN: process.env.JWT_ACCESS_TOKEN_EXPIRES_IN || "25000",
     JWT_REFRESH_TOKEN_EXPIRES_IN: process.env.JWT_REFRESH_TOKEN_EXPIRES_IN || "100000",
-    OTP_EXPIRY: Number(process.env.OTP_EXPIRY) || 300,
-    AES_ENCRYPTION_KEY:
-        process.env.AES_ENCRYPTION_KEY ||
-        "your_aes_encryption_key_which_should_be_64_characters_long_0123456789abcdef0123456789abcdef",
 };
 
 let Config;

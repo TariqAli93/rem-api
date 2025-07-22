@@ -13,7 +13,7 @@ app.post("/webhook", (req, res) => {
     exec("./deploy.sh", (err, stdout, stderr) => {
         if (err) {
             console.error(stderr);
-            return res.status(500).send("Deploy failed");
+            return res.status(500).send("Deploy failed : " + stderr);
         }
         console.log(stdout);
         res.send("✅ Deployed!");

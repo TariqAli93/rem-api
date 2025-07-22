@@ -21,16 +21,18 @@ const ConfigSchema = object({
 });
 
 const envVariables = {
-    NODE_ENV: process.env.NODE_ENV,
-    TZ: process.env.TZ || "Asia/Kolkata",
-    PORT: Number(process.env.PORT),
-    SERVER_DOMAIN: process.env.SERVER_DOMAIN,
-    DATABASE_URL: process.env.DATABASE_URL,
-    JWT_SECRET: process.env.JWT_SECRET,
-    JWT_ACCESS_TOKEN_EXPIRES_IN: process.env.JWT_ACCESS_TOKEN_EXPIRES_IN,
-    JWT_REFRESH_TOKEN_EXPIRES_IN: process.env.JWT_REFRESH_TOKEN_EXPIRES_IN,
-    OTP_EXPIRY: Number(process.env.OTP_EXPIRY),
-    AES_ENCRYPTION_KEY: process.env.AES_ENCRYPTION_KEY,
+    NODE_ENV: process.env.NODE_ENV || "development",
+    TZ: process.env.TZ || "Asia/Kolkata" || "UTC",
+    PORT: Number(process.env.PORT) || 3000,
+    SERVER_DOMAIN: process.env.SERVER_DOMAIN || "0.0.0.0",
+    DATABASE_URL: process.env.DATABASE_URL || "mysql://root:toor@187.33.150.194:3306/alnakheel",
+    JWT_SECRET: process.env.JWT_SECRET || "your_jwt_secret",
+    JWT_ACCESS_TOKEN_EXPIRES_IN: process.env.JWT_ACCESS_TOKEN_EXPIRES_IN || "25000",
+    JWT_REFRESH_TOKEN_EXPIRES_IN: process.env.JWT_REFRESH_TOKEN_EXPIRES_IN || "100000",
+    OTP_EXPIRY: Number(process.env.OTP_EXPIRY) || 300,
+    AES_ENCRYPTION_KEY:
+        process.env.AES_ENCRYPTION_KEY ||
+        "your_aes_encryption_key_which_should_be_64_characters_long",
 };
 
 let Config;

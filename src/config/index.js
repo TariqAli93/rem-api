@@ -22,7 +22,7 @@ const ConfigSchema = object({
 
 const envVariables = {
     NODE_ENV: process.env.NODE_ENV || "development",
-    TZ: process.env.TZ || "Asia/Kolkata" || "UTC",
+    TZ: process.env.TZ || "Asia/Kolkata",
     PORT: Number(process.env.PORT) || 3000,
     SERVER_DOMAIN: process.env.SERVER_DOMAIN || "0.0.0.0",
     DATABASE_URL: process.env.DATABASE_URL || "mysql://root:toor@187.33.150.194:3306/alnakheel",
@@ -32,7 +32,7 @@ const envVariables = {
     OTP_EXPIRY: Number(process.env.OTP_EXPIRY) || 300,
     AES_ENCRYPTION_KEY:
         process.env.AES_ENCRYPTION_KEY ||
-        "your_aes_encryption_key_which_should_be_64_characters_long",
+        "your_aes_encryption_key_which_should_be_64_characters_long_0123456789abcdef0123456789abcdef",
 };
 
 let Config;

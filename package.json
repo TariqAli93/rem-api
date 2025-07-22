@@ -4,7 +4,7 @@
     "main": "src/server.js",
     "type": "module",
     "engines": {
-        "node": "20.x"
+        "node": ">=20"
     },
     "scripts": {
         "start": "dotenv -e .env -- npm run prisma:push && cross-env NODE_ENV=production node src/server.js",

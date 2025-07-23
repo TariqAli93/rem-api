@@ -12,19 +12,9 @@ const startServer = async () => {
         logger.info(`[✨] Environment: ${Config.NODE_ENV} 🌐`);
     }
 
-    //Dispaly Timezone of the Server using Node
-    logger.info(`[✨] Timezone: ${Config.TZ} ⏰`);
-
-    //Display Offset of the Server Timezone
-    logger.info(`[✨] Timezone Offset: ${new Date().getTimezoneOffset()} minutes ⏰`);
-
     try {
         app.listen(PORT, "0.0.0.0", () => {
             logger.info(`[✨] Server Port: ${PORT} 🚀`);
-            logger.info(`[✨] Server Domain: ${Config.SERVER_DOMAIN} 🌐`);
-            logger.info(`[✨] Server is running in ${NODE_ENV} mode`);
-            logger.info(`[✨] Server Timezone: ${Config.TZ} ⏰`);
-            logger.info(`[✨] server is running at ${Config.SERVER_DOMAIN} 🌐`);
         });
     } catch (err) {
         logger.error(`[❌] Server : Failed >> Error: ${err.message}`);

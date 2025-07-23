@@ -70,7 +70,7 @@ export const loginUser = async (userData) => {
         username: user.username,
         password: user.password,
         providedPassword: password,
-        hashPassword: hashPassword(password),
+        hashPassword: await hashPassword(password),
     });
 
     if (!isPasswordMatch) {

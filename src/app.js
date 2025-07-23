@@ -25,9 +25,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(api_compression);
 // app.use(decrypt_request);
 // app.use(encrypt_response);
-app.use(global_error_handler);
 
 // init routes
 app.use("/api", routes);
+
+// Global error handler should be after routes
+app.use(global_error_handler);
 
 export default app;

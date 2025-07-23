@@ -1,11 +1,10 @@
 import winston from "winston";
 import moment from "moment-timezone";
-import { MongoDB } from "winston-mongodb";
 import { Config } from "./index.js";
 
 const logger = winston.createLogger({
     level: "info",
-    defaultMeta: { serviceName: "prisma-express-js-kit" },
+    defaultMeta: { serviceName: "alnakheelApi" },
     format: winston.format.combine(
         winston.format.timestamp({
             format: () => moment().tz(Config.TZ).format(),
@@ -15,7 +14,6 @@ const logger = winston.createLogger({
         }),
     ),
     transports: [
-        
         new winston.transports.Console({
             level: "info",
             silent: Config.NODE_ENV === "test",

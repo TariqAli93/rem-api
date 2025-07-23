@@ -64,7 +64,13 @@ export const loginUser = async (userData) => {
     //compare the passwords
     const isPasswordMatch = await comparePassword(password, user.password);
 
-    console.log("Password match status:", isPasswordMatch);
+    console.log("Password match status:", {
+        isPasswordMatch,
+        userId: user.id,
+        username: user.username,
+        password: user.password,
+        providedPassword: password,
+    });
 
     if (!isPasswordMatch) {
         throw new createHttpError.Unauthorized("Invalid credentials!");

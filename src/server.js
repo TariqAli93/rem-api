@@ -25,7 +25,7 @@ const startServer = async () => {
             logger.info(`[✨] Server Domain: ${Config.SERVER_DOMAIN} 🌐`);
             logger.info(`[✨] Server is running in ${NODE_ENV} mode`);
             logger.info(`[✨] Server Timezone: ${Config.TZ} ⏰`);
-            logger.info(`[✨] server is running at http://${Config.SERVER_DOMAIN}:${PORT} 🌐`);
+            logger.info(`[✨] server is running at http://${Config.SERVER_DOMAIN} 🌐`);
         });
     } catch (err) {
         logger.error(`[❌] Server : Failed >> Error: ${err.message}`);
